@@ -5,11 +5,7 @@ import AboutSection from './components/AboutSection.vue'
 import ExperienceTimeline from './components/ExperienceTimeline.vue'
 import SkillCloud from './components/SkillCloud.vue'
 
-const { t, locale } = useI18n()
-
-const toggleLanguage = () => {
-  locale.value = locale.value === 'en' ? 'pt' : 'en'
-}
+const { locale } = useI18n()
 
 const exportPDF = () => {
   window.print()
@@ -19,7 +15,10 @@ const exportPDF = () => {
 <template>
   <div class="cv-container">
     <div class="toolbar no-print">
-      <button @click="toggleLanguage" class="tool-btn">{{ $t('ui.switchLang') }}</button>
+      <div class="lang-switch">
+        <button :class="{ active: locale === 'en' }" @click="locale = 'en'">EN</button>
+        <button :class="{ active: locale === 'pt' }" @click="locale = 'pt'">PT</button>
+      </div>
       <button @click="exportPDF" class="tool-btn primary">{{ $t('ui.exportPdf') }}</button>
     </div>
 
@@ -48,6 +47,36 @@ const exportPDF = () => {
   display: flex;
   gap: 0.5rem;
   z-index: 100;
+  align-items: center;
+}
+
+.lang-switch {
+  display: flex;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.lang-switch button {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.lang-switch button:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-switch button.active {
+  background: var(--accent-color);
+  color: #fff;
 }
 
 .tool-btn {
