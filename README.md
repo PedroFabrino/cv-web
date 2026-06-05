@@ -1,44 +1,49 @@
-# cv-web
+# Pedro Fabrino - Online Curriculum Vitae
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to the repository for my interactive online CV! 
 
-## Recommended IDE Setup
+## 👨‍💻 Who am I?
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+I'm **Pedro Fabrino**, a Technical Lead and Senior Developer based in Brasília, Brazil. With over 12 years of experience in the software industry, I specialize in building robust applications across mobile and web platforms. 
 
-## Recommended Browser Setup
+My core expertise includes:
+- **iOS Development**: Swift, SwiftUI, Objective-C
+- **Cross-Platform Mobile**: React Native, Flutter
+- **Web Development**: Vue.js, Node.js
+- **Agile Leadership**: Guiding teams and aligning technical solutions with client needs using Scrum methodologies.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 🚀 About This Project
 
-## Customize configuration
+This project serves as my **Online Curriculum Vitae**. It's designed to showcase my professional background, skills, and career timeline in a modern, interactive web format instead of a traditional PDF.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Tech Stack
+The website was built using a modern front-end stack to ensure high performance and a premium user experience:
+- **Vue.js (v3)** - The Progressive JavaScript Framework
+- **Vite** - Next Generation Frontend Tooling
+- **Vanilla CSS** - With CSS Variables for a customized, responsive glassmorphism dark theme
+- **GitHub Actions** - Automated CI/CD pipeline to deploy the site to GitHub Pages
 
-## Project Setup
+### Running Locally
 
-```sh
-npm install
-```
+If you'd like to run this project on your local machine:
 
-### Compile and Hot-Reload for Development
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pfabrino/cv-web.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd cv-web
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```sh
-npm run dev
-```
+## 📬 Get in Touch
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/pedro-fabrino) or email me directly at pfabrino@gmail.com.
