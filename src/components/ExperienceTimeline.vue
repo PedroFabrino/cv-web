@@ -175,6 +175,8 @@ const formatDate = (dateString) => {
 @media print {
   .experience-section {
     margin-bottom: 2rem;
+    break-before: page;
+    page-break-before: always;
   }
   .section-title {
     color: #000;
