@@ -30,13 +30,16 @@
 }
 
 .skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 
 .skill-category {
   padding: 1.5rem;
+  flex: 0 1 calc((100% - 4rem) / 3);
+  min-width: 250px;
 }
 
 .category-name {
