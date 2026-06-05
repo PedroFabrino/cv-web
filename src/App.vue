@@ -9,8 +9,6 @@ import PrintLayout from './components/PrintLayout.vue'
 
 const { locale } = useI18n()
 
-const exportEnabled = import.meta.env.VITE_EXPORT_ENABLED === 'true'
-
 const exportPDF = () => {
   window.print()
 }
@@ -23,7 +21,7 @@ const exportPDF = () => {
         <button :class="{ active: locale === 'en' }" @click="locale = 'en'">EN</button>
         <button :class="{ active: locale === 'pt' }" @click="locale = 'pt'">PT</button>
       </div>
-      <button v-if="exportEnabled" @click="exportPDF" class="tool-btn primary">{{ $t('ui.exportPdf') }}</button>
+      <button @click="exportPDF" class="tool-btn primary">{{ $t('ui.exportPdf') }}</button>
     </div>
 
     <div class="web-only">
