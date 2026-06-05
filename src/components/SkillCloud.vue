@@ -30,27 +30,13 @@
 }
 
 .skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
 .skill-category {
   padding: 1.5rem;
-  width: calc((100% - 4rem) / 3);
-}
-
-@media (max-width: 850px) {
-  .skill-category {
-    width: calc((100% - 2rem) / 2);
-  }
-}
-
-@media (max-width: 600px) {
-  .skill-category {
-    width: 100%;
-  }
 }
 
 .category-name {
