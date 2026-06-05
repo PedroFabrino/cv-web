@@ -38,8 +38,19 @@
 
 .skill-category {
   padding: 1.5rem;
-  flex: 0 1 calc((100% - 4rem) / 3);
-  min-width: 250px;
+  width: calc((100% - 4rem) / 3);
+}
+
+@media (max-width: 850px) {
+  .skill-category {
+    width: calc((100% - 2rem) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .skill-category {
+    width: 100%;
+  }
 }
 
 .category-name {
