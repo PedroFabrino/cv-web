@@ -1,24 +1,18 @@
-<script setup>
-import { useI18n } from 'vue-i18n'
-
-const { t, tm } = useI18n()
-</script>
-
 <template>
   <div class="print-layout">
     <div class="print-sidebar">
       <!-- Contact Info -->
       <div class="print-section">
         <h3>Contact</h3>
-        <p>{{ t('cv.basics.phone') }}</p>
-        <p>{{ t('cv.basics.email') }}</p>
-        <p>{{ t('cv.basics.url') }}</p>
+        <p>{{ $t('cv.basics.phone') }}</p>
+        <p>{{ $t('cv.basics.email') }}</p>
+        <p>{{ $t('cv.basics.url') }}</p>
       </div>
       
       <!-- Skills -->
       <div class="print-section">
         <h3>Top Skills</h3>
-        <div v-for="(category, index) in tm('cv.skills')" :key="index" class="print-skill-cat">
+        <div v-for="(category, index) in $tm('cv.skills')" :key="index" class="print-skill-cat">
           <h4>{{ category.name }}</h4>
           <p>{{ category.keywords.join(', ') }}</p>
         </div>
@@ -26,8 +20,8 @@ const { t, tm } = useI18n()
 
       <!-- Certifications -->
       <div class="print-section">
-        <h3>{{ t('ui.certifications') }}</h3>
-        <div v-for="(cert, index) in tm('cv.certifications')" :key="index" class="print-cert">
+        <h3>{{ $t('ui.certifications') }}</h3>
+        <div v-for="(cert, index) in $tm('cv.certifications')" :key="index" class="print-cert">
           <h4>{{ cert.name }}</h4>
           <p>{{ cert.issuer }} &bull; {{ cert.date }}</p>
         </div>
@@ -37,21 +31,21 @@ const { t, tm } = useI18n()
     <div class="print-main">
       <!-- Header Info -->
       <header class="print-header">
-        <h1>{{ t('cv.basics.name') }}</h1>
-        <h2>{{ t('cv.basics.label') }}</h2>
-        <p>{{ t('cv.basics.location.city') }}, {{ t('cv.basics.location.region') }}</p>
+        <h1>{{ $t('cv.basics.name') }}</h1>
+        <h2>{{ $t('cv.basics.label') }}</h2>
+        <p>{{ $t('cv.basics.location.city') }}, {{ $t('cv.basics.location.region') }}</p>
       </header>
 
       <!-- Summary -->
       <div class="print-section">
         <h3>Summary</h3>
-        <p>{{ t('cv.basics.summary') }}</p>
+        <p>{{ $t('cv.basics.summary') }}</p>
       </div>
 
       <!-- Experience -->
       <div class="print-section">
         <h3>Experience</h3>
-        <div v-for="(job, index) in tm('cv.work')" :key="index" class="print-job">
+        <div v-for="(job, index) in $tm('cv.work')" :key="index" class="print-job">
           <div class="job-header">
             <h4>{{ job.position }}</h4>
             <span>{{ job.company }} | {{ job.startDate }} - {{ job.endDate }}</span>
@@ -69,12 +63,12 @@ const { t, tm } = useI18n()
 <style scoped>
 /* Hidden by default on web */
 .print-layout {
-  display: none;
+  display: none !important;
 }
 
 @media print {
   .print-layout {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 250px 1fr;
     width: 100%;
     min-height: 100vh;
