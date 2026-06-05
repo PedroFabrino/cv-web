@@ -1,3 +1,6 @@
+<script setup>
+</script>
+
 <template>
   <div class="print-layout">
     <div class="print-sidebar">
@@ -62,8 +65,10 @@
 
 <style scoped>
 /* Hidden by default on web */
-.print-layout {
-  display: none !important;
+@media screen {
+  .print-layout {
+    display: none !important;
+  }
 }
 
 @media print {
