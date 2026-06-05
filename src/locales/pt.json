@@ -32,7 +32,7 @@
           "Facilitação de reuniões usando metodologias Scrum e Ágil com clientes e desenvolvedores",
           "Desenvolvimento de provas de conceito em diferentes linguagens e plataformas para testar funcionalidades",
           "Estimativa de projetos baseados em requisitos de UI/UX para construir propostas precisas",
-          "Trabalhando em um projeto para uma conhecida empresa de carros alemã, atuando em um IDP (Internal Developer Platform) para implantar, instanciar e medir custos para ajudar stakeholders e desenvolvedores a identificar e aprimorar seus processos. Utilizando Terraform, Docker e AWS."
+          "Liderança no desenvolvimento de uma Plataforma Interna de Desenvolvedores (IDP) para uma grande montadora alemã. Projetada para automatizar implantações, provisionar infraestrutura e rastrear custos, a plataforma capacita stakeholders e desenvolvedores a otimizar seus fluxos de trabalho usando Terraform, Docker e AWS."
         ]
       },
       {
@@ -102,6 +102,10 @@
       {
         "name": "Desenvolvimento Web",
         "keywords": ["Vue.js", "Node.js", "Bubble.io"]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "keywords": ["AWS", "Docker", "Terraform"]
       },
       {
         "name": "Metodologias",

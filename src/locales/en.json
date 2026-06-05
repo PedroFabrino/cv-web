@@ -32,7 +32,7 @@
           "Facilitated meetings using Scrum and Agile methodologies with both clients and developers",
           "Developed proof of concepts in different languages and platforms to test functionalities required by the client",
           "Estimated projects based on functionalities and UI/UX requirements to build accurate proposals",
-          "Working in a project for a well-known German car company, working in an IDP for deploying, instantiating and measuring costs to help stakeholders and developers identify and enhance their processes. Using Terraform, Docker and AWS."
+          "Spearheaded the development of an Internal Developer Platform (IDP) for a major German automotive company. Designed to automate deployments, provision infrastructure, and track costs, the platform empowers stakeholders and developers to optimize their workflows using Terraform, Docker, and AWS."
         ]
       },
       {
@@ -102,6 +102,10 @@
       {
         "name": "Web Development",
         "keywords": ["Vue.js", "Node.js", "Bubble.io"]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "keywords": ["AWS", "Docker", "Terraform"]
       },
       {
         "name": "Methodologies",
