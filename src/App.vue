@@ -1,5 +1,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { onMounted, onErrorCaptured } from 'vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ExperienceTimeline from './components/ExperienceTimeline.vue'
