@@ -202,7 +202,9 @@ const formatDate = (dateString) => {
   }
   .job-header {
     margin-bottom: 0.5rem;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
   }
   .job-title {
     color: #222;
