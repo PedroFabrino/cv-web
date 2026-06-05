@@ -85,6 +85,19 @@ const formatDate = (dateString) => {
   border: 4px solid var(--bg-color);
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
   z-index: 1;
+  animation: pulsate 2s infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
 }
 
 .timeline-content {
