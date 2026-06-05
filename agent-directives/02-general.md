@@ -14,3 +14,6 @@ When acting upon this repository, all AI agents must strictly adhere to the foll
 3. **Code Quality**:
    - Run `npm run format` (Prettier) before committing to ensure uniform code style.
    - Keep Vue components modular and clean.
+
+4. **Anti-Hallucination Policy**:
+   - **DO NOT ever hallucinate** any information. Always base updates, dependencies, and code purely on factual data or user-provided context. Ask the user before making assumptions if something is unclear.
