@@ -73,20 +73,34 @@
 
 @media print {
   .print-layout {
-    display: grid !important;
-    grid-template-columns: 250px 1fr;
+    display: block !important;
     width: 100%;
-    min-height: 100vh;
     background: #fff;
     color: #333;
     font-family: var(--font-primary), sans-serif;
   }
 
   .print-sidebar {
+    width: 250px;
+    float: left;
     background: transparent;
     color: #333;
     padding: 2rem;
     border-right: 2px solid #e2e8f0;
+    box-sizing: border-box;
+  }
+
+  .print-main {
+    margin-left: 250px;
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+  }
+  
+  /* Clearfix for the container */
+  .print-layout::after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
   .print-sidebar h3 {
@@ -113,9 +127,6 @@
     color: #3b82f6;
   }
 
-  .print-main {
-    padding: 2rem 3rem;
-  }
 
   .print-header h1 {
     font-size: 2.5rem;
