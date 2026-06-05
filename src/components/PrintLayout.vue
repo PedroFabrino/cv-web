@@ -75,16 +75,15 @@ const { t, tm } = useI18n()
   }
 
   .print-sidebar {
-    background: #1e293b;
-    color: #f8fafc;
+    background: transparent;
+    color: #333;
     padding: 2rem;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    border-right: 2px solid #e2e8f0;
   }
 
   .print-sidebar h3 {
-    color: #fff;
-    border-bottom: 2px solid rgba(255,255,255,0.2);
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     margin-top: 0;
@@ -94,6 +93,7 @@ const { t, tm } = useI18n()
     font-size: 0.85rem;
     margin-bottom: 0.5rem;
     word-break: break-all;
+    color: #333;
   }
 
   .print-skill-cat {
@@ -102,7 +102,7 @@ const { t, tm } = useI18n()
   .print-skill-cat h4 {
     font-size: 0.9rem;
     margin: 0 0 0.2rem 0;
-    color: #93c5fd;
+    color: #3b82f6;
   }
 
   .print-main {
