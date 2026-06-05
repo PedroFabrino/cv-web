@@ -4,6 +4,8 @@
     "technicalSkills": "Technical Skills",
     "experience": "Experience",
     "education": "Education",
+    "certifications": "Certifications",
+    "seeCertificate": "See Certificate",
     "present": "Present",
     "exportPdf": "Export PDF",
     "switchLang": "PT"
@@ -110,6 +112,14 @@
       {
         "name": "Methodologies",
         "keywords": ["Scrum", "Agile", "Continuous Integration", "Continuous Delivery"]
+      }
+    ],
+    "certifications": [
+      {
+        "name": "C2 Proficiency - English Certificate",
+        "issuer": "EF SET",
+        "date": "2018",
+        "url": "https://cert.efset.org/MbuSTE"
       }
     ]
   }

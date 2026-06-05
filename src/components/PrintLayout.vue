@@ -23,6 +23,15 @@ const { t, tm } = useI18n()
           <p>{{ category.keywords.join(', ') }}</p>
         </div>
       </div>
+
+      <!-- Certifications -->
+      <div class="print-section">
+        <h3>{{ t('ui.certifications') }}</h3>
+        <div v-for="(cert, index) in tm('cv.certifications')" :key="index" class="print-cert">
+          <h4>{{ cert.name }}</h4>
+          <p>{{ cert.issuer }} &bull; {{ cert.date }}</p>
+        </div>
+      </div>
     </div>
 
     <div class="print-main">
@@ -96,10 +105,10 @@ const { t, tm } = useI18n()
     color: #333;
   }
 
-  .print-skill-cat {
+  .print-skill-cat, .print-cert {
     margin-bottom: 1rem;
   }
-  .print-skill-cat h4 {
+  .print-skill-cat h4, .print-cert h4 {
     font-size: 0.9rem;
     margin: 0 0 0.2rem 0;
     color: #3b82f6;

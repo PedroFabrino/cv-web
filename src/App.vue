@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ExperienceTimeline from './components/ExperienceTimeline.vue'
 import SkillCloud from './components/SkillCloud.vue'
+import CertificationsSection from './components/CertificationsSection.vue'
 import PrintLayout from './components/PrintLayout.vue'
 
 const { locale } = useI18n()
@@ -28,6 +29,7 @@ const exportPDF = () => {
       <div class="content-wrapper">
         <AboutSection />
         <SkillCloud />
+        <CertificationsSection />
         <ExperienceTimeline />
       </div>
     </div>
