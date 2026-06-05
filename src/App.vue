@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ExperienceTimeline from './components/ExperienceTimeline.vue'
 import SkillCloud from './components/SkillCloud.vue'
+import PrintLayout from './components/PrintLayout.vue'
 
 const { locale } = useI18n()
 
@@ -22,12 +23,17 @@ const exportPDF = () => {
       <button @click="exportPDF" class="tool-btn primary">{{ $t('ui.exportPdf') }}</button>
     </div>
 
-    <HeroSection />
-    <div class="content-wrapper">
-      <AboutSection />
-      <SkillCloud />
-      <ExperienceTimeline />
+    <div class="web-only">
+      <HeroSection />
+      <div class="content-wrapper">
+        <AboutSection />
+        <SkillCloud />
+        <ExperienceTimeline />
+      </div>
     </div>
+
+    <PrintLayout />
+
     <footer class="cv-footer no-print">
       <p>&copy; {{ new Date().getFullYear() }} {{ $t('cv.basics.name') }}. All rights reserved.</p>
     </footer>
@@ -35,6 +41,11 @@ const exportPDF = () => {
 </template>
 
 <style scoped>
+@media print {
+  .web-only {
+    display: none !important;
+  }
+}
 .cv-container {
   max-width: 100%;
   margin: 0 auto;
