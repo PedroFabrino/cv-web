@@ -93,7 +93,7 @@
     "skills": [
       {
         "name": "Desenvolvimento iOS",
-        "keywords": ["Swift", "SwiftUI", "Objective-C"]
+        "keywords": ["Swift", "SwiftUI", "Objective-C", "tvOS", "CarPlay"]
       },
       {
         "name": "Mobile Multiplataforma",
@@ -101,7 +101,7 @@
       },
       {
         "name": "Desenvolvimento Web",
-        "keywords": ["Vue.js", "Node.js", "Bubble.io"]
+        "keywords": ["Vue.js", "Node.js", "Nest.js"]
       },
       {
         "name": "Cloud & DevOps",
@@ -109,7 +109,7 @@
       },
       {
         "name": "Metodologias",
-        "keywords": ["Scrum", "Agile", "Continuous Integration"]
+        "keywords": ["Scrum", "Agile", "Continuous Integration", "Continuous Delivery"]
       }
     ]
   }
