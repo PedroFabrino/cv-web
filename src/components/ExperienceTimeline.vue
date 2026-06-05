@@ -1,26 +1,23 @@
 <script setup>
-defineProps({
-  experience: {
-    type: Array,
-    required: true,
-  },
-})
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const formatDate = (dateString) => {
   if (!dateString) return ''
-  if (dateString.toLowerCase() === 'present') return 'Present'
+  if (dateString.toLowerCase() === 'present' || dateString.toLowerCase() === 'presente') return t('ui.present')
   const [year, month] = dateString.split('-')
   const date = new Date(year, month ? month - 1 : 0)
-  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+  return date.toLocaleDateString(undefined, { month: 'short', year: 'numeric' })
 }
 </script>
 
 <template>
   <section class="experience-section">
-    <h3 class="section-title">Experience</h3>
+    <h3 class="section-title">{{ $t('ui.experience') }}</h3>
     <div class="timeline">
-      <div v-for="(job, index) in experience" :key="index" class="timeline-item">
-        <div class="timeline-marker"></div>
+      <div v-for="(job, index) in $tm('cv.work')" :key="index" class="timeline-item">
+        <div class="timeline-marker no-print"></div>
         <div class="timeline-content glass-card">
           <div class="job-header">
             <div>
@@ -159,6 +156,69 @@ const formatDate = (dateString) => {
   }
   .job-header {
     flex-direction: column;
+  }
+}
+
+@media print {
+  .experience-section {
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    color: #000;
+    font-size: 14pt;
+    margin-bottom: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.2rem;
+  }
+  .timeline::before {
+    display: none;
+  }
+  .timeline-item {
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+    break-inside: avoid;
+  }
+  .timeline-content {
+    padding: 0;
+    border: none;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+  .job-header {
+    margin-bottom: 0.5rem;
+    align-items: center;
+  }
+  .job-title {
+    color: #222;
+    font-size: 12pt;
+    font-weight: bold;
+  }
+  .company-name {
+    color: #444;
+    font-size: 11pt;
+  }
+  .job-date {
+    background: none;
+    padding: 0;
+    color: #666;
+    font-size: 10pt;
+  }
+  .job-summary {
+    color: #333;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+  .job-highlights li {
+    color: #333;
+    font-size: 10pt;
+    padding-left: 1rem;
+  }
+  .job-highlights li::before {
+    content: '•';
+    color: #000;
   }
 }
 </style>

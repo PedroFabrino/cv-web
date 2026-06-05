@@ -1,16 +1,10 @@
 <script setup>
-defineProps({
-  summary: {
-    type: String,
-    required: true,
-  },
-})
 </script>
 
 <template>
   <section class="about-section glass-card">
-    <h3 class="section-title">About Me</h3>
-    <p class="summary-text">{{ summary }}</p>
+    <h3 class="section-title">{{ $t('ui.about') }}</h3>
+    <p class="summary-text">{{ $t('cv.basics.summary') }}</p>
   </section>
 </template>
 
@@ -35,5 +29,30 @@ defineProps({
   font-size: 1.2rem;
   color: var(--text-secondary);
   line-height: 1.8;
+}
+
+@media print {
+  .about-section {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+    border: none;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+  .section-title {
+    color: #000;
+    font-size: 14pt;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.2rem;
+  }
+  .summary-text {
+    color: #333;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
 }
 </style>

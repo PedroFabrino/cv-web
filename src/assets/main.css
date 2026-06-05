@@ -26,12 +26,7 @@ body {
   overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headings);
   font-weight: 700;
   color: var(--text-primary);
@@ -55,9 +50,7 @@ a:hover {
   border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 2rem;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
@@ -74,4 +67,25 @@ a:hover {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media print {
+  body {
+    background-color: #fff;
+    color: #000;
+    overflow-x: visible;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+
+  .content-wrapper {
+    padding: 0 !important;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 }

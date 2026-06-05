@@ -1,17 +1,11 @@
 <script setup>
-defineProps({
-  skills: {
-    type: Array,
-    required: true,
-  },
-})
 </script>
 
 <template>
   <section class="skills-section">
-    <h3 class="section-title">Technical Skills</h3>
+    <h3 class="section-title">{{ $t('ui.technicalSkills') }}</h3>
     <div class="skills-container">
-      <div v-for="category in skills" :key="category.name" class="skill-category glass-card">
+      <div v-for="(category, index) in $tm('cv.skills')" :key="index" class="skill-category glass-card">
         <h4 class="category-name">{{ category.name }}</h4>
         <div class="tags">
           <span v-for="skill in category.keywords" :key="skill" class="skill-tag">
@@ -71,5 +65,53 @@ defineProps({
   background: var(--accent-color);
   color: #fff;
   transform: scale(1.05);
+}
+
+@media print {
+  .skills-section {
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    color: #000;
+    font-size: 14pt;
+    margin-bottom: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.2rem;
+  }
+  .skills-container {
+    display: block;
+  }
+  .skill-category {
+    padding: 0;
+    margin-bottom: 1rem;
+    border: none;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+  .category-name {
+    color: #222;
+    font-size: 11pt;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  .tags {
+    gap: 0.5rem;
+  }
+  .skill-tag {
+    background: none;
+    color: #333;
+    padding: 0;
+    border: none;
+    font-size: 10pt;
+  }
+  .skill-tag::after {
+    content: ', ';
+  }
+  .skill-tag:last-child::after {
+    content: '';
+  }
 }
 </style>

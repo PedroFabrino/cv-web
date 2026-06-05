@@ -1,0 +1,111 @@
+{
+  "ui": {
+    "about": "About Me",
+    "technicalSkills": "Technical Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "present": "Present",
+    "exportPdf": "Export PDF",
+    "switchLang": "PT"
+  },
+  "cv": {
+    "basics": {
+      "name": "Pedro Fabrino",
+      "label": "Technical Lead | iOS, React Native & Vue.js",
+      "email": "pfabrino@gmail.com",
+      "phone": "5561986210308",
+      "url": "https://www.linkedin.com/in/pedro-fabrino",
+      "location": {
+        "city": "Brasília",
+        "region": "Federal District"
+      },
+      "summary": "Experienced developer with over 12 years in the industry. Extensive work with Objective-C, Swift and SwiftUI for iOS app development. Gained extensive experience with cross-platform development using React Native and Flutter. Additionally, over 4 years of experience working with Node.js and Vue.js for web development. Solid background utilizing Scrum methodology to ensure efficient project delivery. Passionate technologist actively engaged with the latest developments. In free time, enjoys exploring new games and anime."
+    },
+    "work": [
+      {
+        "company": "ília",
+        "position": "Technical Lead",
+        "startDate": "2023-01",
+        "endDate": "Present",
+        "summary": "Responsible for accurately estimating new projects with the commercial team and making new proposals to potential new clients. Leading the development of iOS and Android apps required for international clients, working directly with the project leader and clients to plan out the sprints and write user stories.",
+        "highlights": [
+          "Facilitated meetings using Scrum and Agile methodologies with both clients and developers",
+          "Developed proof of concepts in different languages and platforms to test functionalities required by the client",
+          "Estimated projects based on functionalities and UI/UX requirements to build accurate proposals"
+        ]
+      },
+      {
+        "company": "Apply Digital",
+        "position": "Software Engineer",
+        "startDate": "2022-01",
+        "endDate": "2023-01",
+        "summary": "Main developer for tvOS on a large entertainment company's app and helped on the apps for iOS with iPad and iPhone. The primary function was secure video streaming prior to official theater release.",
+        "highlights": [
+          "Maintenance of already implemented features on tvOS and iOS",
+          "Implementation of new features on the tvOS",
+          "Rewrote most of the tvOS app to use SwiftUI to accommodate for new features"
+        ]
+      },
+      {
+        "company": "ília",
+        "position": "Mobile Senior Developer",
+        "startDate": "2020-03",
+        "endDate": "2022-02",
+        "summary": "Mobile development with a focus on fast deliveries, continuous integration, and delivery. Focused on helping juniors pick up the new stack and welcoming them to the project and company's practices.",
+        "highlights": [
+          "Creating new features (UOWE / Warren - React Native and Swift)",
+          "Fixing bugs (UOWE / Warren - React Native and Swift)"
+        ]
+      },
+      {
+        "company": "ília",
+        "position": "Mobile Technical Leader",
+        "startDate": "2017-11",
+        "endDate": "2020-03",
+        "summary": "Led the development of iOS and/or Android apps required for international clients. Worked with the tech team to find the best solutions for client problems.",
+        "highlights": [
+          "Creating new features (Ticket / BMW Connected / BMW MLaptimer / BMW Mini / Livelo - Swift and React Native)",
+          "Fixing bugs (Ticket / BMW Connected / BMW MLaptimer / BMW Mini / Livelo - Swift and React Native)",
+          "Led team and aligned with clients (Ticket / Livelo - Scrum)"
+        ]
+      },
+      {
+        "company": "ília",
+        "position": "Mobile Developer",
+        "startDate": "2015-11",
+        "endDate": "2017-11",
+        "summary": "Tasks included creating new apps from scratch, implementing new features, and fixing bugs.",
+        "highlights": [
+          "Creating new features (Dokter / AulaUP / VetsGo / Sabin - Objective C and Swift)",
+          "Fixing bugs (Dokter / AulaUP / VetsGo / Sabin - Objective C and Swift)"
+        ]
+      },
+      {
+        "company": "BEPiD",
+        "position": "Developer",
+        "startDate": "2014-01",
+        "endDate": "2015-11",
+        "summary": "",
+        "highlights": []
+      }
+    ],
+    "skills": [
+      {
+        "name": "iOS Development",
+        "keywords": ["Swift", "SwiftUI", "Objective-C"]
+      },
+      {
+        "name": "Cross-Platform Mobile",
+        "keywords": ["React Native", "Flutter"]
+      },
+      {
+        "name": "Web Development",
+        "keywords": ["Vue.js", "Node.js", "Bubble.io"]
+      },
+      {
+        "name": "Methodologies",
+        "keywords": ["Scrum", "Agile", "Continuous Integration"]
+      }
+    ]
+  }
+}
