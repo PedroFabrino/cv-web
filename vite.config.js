@@ -13,6 +13,11 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  server: {
+    // Port 5173 is reserved by Windows (Hyper-V/WinNAT range 5173–5272)
+    host: '127.0.0.1',
+    port: 5100,
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

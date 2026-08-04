@@ -1,45 +1,38 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { onMounted, onErrorCaptured } from 'vue'
-import HeroSection from './components/HeroSection.vue'
-import AboutSection from './components/AboutSection.vue'
-import ExperienceTimeline from './components/ExperienceTimeline.vue'
-import SkillCloud from './components/SkillCloud.vue'
-import CertificationsSection from './components/CertificationsSection.vue'
-import PrintLayout from './components/PrintLayout.vue'
+import { RouterView, useRoute } from 'vue-router'
+import { generateDirectPDF } from './utils/pdfGenerator.js'
 
-const { locale } = useI18n()
+const { locale, tm, t } = useI18n()
+const route = useRoute()
 
-const exportEnabled = import.meta.env.VITE_EXPORT_ENABLED === 'true'
+const handleDirectDownload = () => {
+  const cvData = tm('cv')
+  generateDirectPDF(cvData, t)
+}
 
-const exportPDF = () => {
-  window.print()
+const openPrintView = () => {
+  const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+    ? import.meta.env.BASE_URL 
+    : `${import.meta.env.BASE_URL}/`
+  window.open(`${window.location.origin}${baseUrl}print`, '_blank')
 }
 </script>
 
 <template>
   <div class="cv-container">
-    <div class="toolbar no-print">
+    <div v-if="route.name !== 'print'" class="toolbar no-print">
       <div class="lang-switch">
         <button :class="{ active: locale === 'en' }" @click="locale = 'en'">EN</button>
         <button :class="{ active: locale === 'pt' }" @click="locale = 'pt'">PT</button>
       </div>
-      <button v-if="exportEnabled" @click="exportPDF" class="tool-btn primary">{{ $t('ui.exportPdf') }}</button>
+      <button @click="handleDirectDownload" class="tool-btn primary">📥 Download PDF</button>
+      <button @click="openPrintView" class="tool-btn secondary">🖨 Print View</button>
     </div>
 
-    <div class="web-only">
-      <HeroSection />
-      <div class="content-wrapper">
-        <AboutSection />
-        <SkillCloud />
-        <CertificationsSection />
-        <ExperienceTimeline />
-      </div>
-    </div>
+    <RouterView />
 
-    <PrintLayout />
-
-    <footer class="cv-footer no-print">
+    <footer v-if="route.name !== 'print'" class="cv-footer no-print">
       <p>&copy; {{ new Date().getFullYear() }} {{ $t('cv.basics.name') }}. All rights reserved.</p>
     </footer>
   </div>
@@ -122,12 +115,6 @@ const exportPDF = () => {
   background: var(--accent-hover);
 }
 
-.content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
 .cv-footer {
   text-align: center;
   padding: 2rem;
@@ -136,3 +123,4 @@ const exportPDF = () => {
   margin-top: 4rem;
 }
 </style>
+

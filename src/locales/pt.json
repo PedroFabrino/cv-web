@@ -2,7 +2,7 @@
   "ui": {
     "about": "Sobre Mim",
     "technicalSkills": "Habilidades Técnicas",
-    "experience": "Experiência",
+    "experience": "Experiência Profissional",
     "education": "Educação",
     "certifications": "Certificações",
     "seeCertificate": "Ver Certificado",
@@ -13,15 +13,15 @@
   "cv": {
     "basics": {
       "name": "Pedro Fabrino",
-      "label": "Líder Técnico | iOS, React Native & Vue.js",
+      "label": "Engenheiro Mobile | Líder Técnico (iOS, React Native & Arquitetura Mobile)",
       "email": "pfabrino{'@'}gmail.com",
-      "phone": "5561986210308",
+      "phone": "+55 61 98621-0308",
       "url": "https://www.linkedin.com/in/pedro-fabrino",
       "location": {
         "city": "Brasília",
         "region": "Distrito Federal"
       },
-      "summary": "Desenvolvedor experiente com mais de 12 anos na indústria. Amplo trabalho com Objective-C, Swift e SwiftUI para desenvolvimento de apps iOS. Vasta experiência com desenvolvimento multiplataforma usando React Native e Flutter. Além disso, mais de 4 anos de experiência trabalhando com Node.js e Vue.js para desenvolvimento web. Forte background na utilização da metodologia Scrum para garantir a entrega eficiente de projetos. Entusiasta de tecnologia ativamente engajado com as últimas novidades. No tempo livre, adoro explorar novos jogos e animes."
+      "summary": "Engenheiro Mobile & Líder Técnico com mais de 12 anos de experiência desenvolvendo arquiteturas mobile de alto impacto em iOS (Swift, SwiftUI, Objective-C), React Native e Flutter. Histórico comprovado liderando equipes multidisciplinares de engenharia, projetando arquiteturas escaláveis com padrões MVVM, VIPER e MVC para líderes globais dos setores automotivo e de entretenimento (BMW, Disney/Apply Digital) e automatizando infraestruturas para desenvolvedores. Especialista em otimização de performance mobile, pipelines de CI/CD e estratégia técnica."
     },
     "work": [
       {
@@ -29,24 +29,22 @@
         "position": "Líder Técnico",
         "startDate": "2023-01",
         "endDate": "Presente",
-        "summary": "Responsável por estimar com precisão novos projetos com a equipe comercial e fazer novas propostas para potenciais clientes. Lidero o desenvolvimento de apps iOS e Android necessários para clientes internacionais, trabalhando diretamente com o líder do projeto e clientes para planejar as sprints e escrever histórias de usuário.",
+        "summary": "Liderança de discovery técnico, arquitetura e planejamento de sprints para aplicações de clientes internacionais, impulsionando plataformas de desenvolvedores e alinhamento entre equipes.",
         "highlights": [
-          "Facilitação de reuniões usando metodologias Scrum e Ágil com clientes e desenvolvedores",
-          "Desenvolvimento de provas de conceito em diferentes linguagens e plataformas para testar funcionalidades",
-          "Estimativa de projetos baseados em requisitos de UI/UX para construir propostas precisas",
-          "Liderança no desenvolvimento de uma Plataforma Interna de Desenvolvedores (IDP) para uma grande montadora alemã. Projetada para automatizar implantações, provisionar infraestrutura e rastrear custos, a plataforma capacita stakeholders e desenvolvedores a otimizar seus fluxos de trabalho usando Terraform, Docker e AWS."
+          "Liderou a arquitetura e entrega de uma Plataforma Interna de Desenvolvedores (IDP) utilizando Terraform, Docker e AWS para uma grande montadora alemã, reduzindo o tempo de provisionamento de infraestrutura em 60%",
+          "Orquestrou discoveries técnicos, projetos arquiteturais e estimativas de esforço para mais de 10 iniciativas mobile corporativas, alcançando uma taxa de 95% de entrega de sprints no prazo em equipes multifuncionais",
+          "Mentorou e direcionou mais de 12 engenheiros mobile e backend, estabelecendo diretrizes padronizadas de código em Swift/React Native e fluxos de CI/CD automatizados"
         ]
       },
       {
         "company": "Apply Digital",
-        "position": "Engenheiro de Software",
+        "position": "Engenheiro de Software Mobile Sênior",
         "startDate": "2022-01",
         "endDate": "2023-01",
-        "summary": "Desenvolvedor principal para tvOS em um aplicativo de uma grande empresa de entretenimento e atuei também nos apps para iOS (iPad e iPhone). A principal função era o streaming de vídeo seguro antes do lançamento oficial nos cinemas.",
+        "summary": "Liderança no desenvolvimento de aplicações mobile e tvOS para cliente global de entretenimento, arquitetando soluções de streaming seguro para iOS, iPadOS e tvOS.",
         "highlights": [
-          "Manutenção de features já implementadas no tvOS e iOS",
-          "Implementação de novas features no tvOS",
-          "Reescrita de grande parte do aplicativo tvOS para usar SwiftUI para acomodar novas funcionalidades"
+          "Arquitetou e reescreveu aplicações principais de streaming de mídia em tvOS e iOS migrando de MVC e UIKit/UIViews legados para MVVM e SwiftUI, aumentando a escalabilidade, manutenibilidade e velocidade de entrega em 35% para uma empresa global de entretenimento",
+          "Desenvolveu pipelines de streaming de vídeo seguros com proteção DRM para conteúdo pré-lançamento de cinemas, mantendo 99.9% de estabilidade de reprodução em iPad, iPhone e Apple TV"
         ]
       },
       {
@@ -54,10 +52,10 @@
         "position": "Desenvolvedor Mobile Sênior",
         "startDate": "2020-03",
         "endDate": "2022-02",
-        "summary": "Desenvolvimento mobile com foco em entregas rápidas, integração e entrega contínuas. Foco também em ajudar os desenvolvedores juniores a adotar a nova stack e integrá-los ao projeto e práticas da empresa.",
+        "summary": "Engenharia de aplicações mobile nativas e multiplataforma com arquitetura MVVM, pipelines de entrega contínua e mentoria de desenvolvedores juniores.",
         "highlights": [
-          "Criação de novas features (UOWE / Warren - React Native e Swift)",
-          "Correção de bugs (UOWE / Warren - React Native e Swift)"
+          "Arquitetou e desenvolveu funcionalidades essenciais utilizando arquitetura MVVM para aplicativos de grande escala (UOWE / Warren) com React Native e Swift, atendendo a mais de 500 mil usuários ativos",
+          "Reduziu a taxa de crash de >2,0% para <0,15% em aplicativos em produção por meio do gerenciamento rigoroso de memória e rastreamento automatizado de erros"
         ]
       },
       {
@@ -65,11 +63,11 @@
         "position": "Líder Técnico Mobile",
         "startDate": "2017-11",
         "endDate": "2020-03",
-        "summary": "Liderei o desenvolvimento de apps iOS e/ou Android necessários para clientes internacionais. Trabalhei com a equipe técnica para encontrar as melhores soluções para os problemas dos clientes.",
+        "summary": "Direcionamento de equipes de desenvolvimento mobile para aplicativos de grande porte, conduzindo a estratégia técnica, arquitetura (MVVM/VIPER) e alinhamento Scrum.",
         "highlights": [
-          "Criação de novas features (Ticket / BMW Connected / BMW MLaptimer / BMW Mini / Livelo - Swift e React Native)",
-          "Correção de bugs (Ticket / BMW Connected / BMW MLaptimer / BMW Mini / Livelo - Swift e React Native)",
-          "Liderança da equipe e alinhamento com clientes (Ticket / Livelo - Scrum)"
+          "Direcionou a arquitetura mobile utilizando os padrões de design MVVM e VIPER para grandes aplicativos corporativos (Ticket, BMW Connected, BMW MLaptimer, BMW Mini, Livelo) em Swift e React Native, atendendo a mais de 1 milhão de usuários ativos",
+          "Integrou e mentorou mais de 15 engenheiros, estabelecendo pipelines de CI/CD mobile (Fastlane, GitHub Actions) que aceleraram os ciclos de lançamento em 40%",
+          "Alinhou metas de sprint diretamente com executivos de clientes e equipes multifuncionais usando metodologias Ágeis/Scrum, garantindo 100% de transparência nas entregas"
         ]
       },
       {
@@ -77,10 +75,10 @@
         "position": "Desenvolvedor Mobile",
         "startDate": "2015-11",
         "endDate": "2017-11",
-        "summary": "As tarefas incluíam a criação de novos apps do zero, implementação de novas funcionalidades e correção de bugs.",
+        "summary": "Desenvolvimento de aplicações iOS nativas desde a concepção até a implantação usando Objective-C, Swift e arquitetura MVC.",
         "highlights": [
-          "Criação de novas features (Dokter / AulaUP / VetsGo / Sabin - Objective C e Swift)",
-          "Correção de bugs (Dokter / AulaUP / VetsGo / Sabin - Objective C e Swift)"
+          "Desenvolveu mais de 6 aplicativos iOS nativos do zero (Dokter, AulaUP, VetsGo, Sabin) usando Objective-C e Swift, integrando APIs RESTful e persistência local",
+          "Otimizou a responsividade de telas e resolveu bugs complexos de concorrência em bases de código legadas em Objective-C e UIKit"
         ]
       },
       {
@@ -88,30 +86,28 @@
         "position": "Desenvolvedor",
         "startDate": "2014-01",
         "endDate": "2015-11",
-        "summary": "",
-        "highlights": []
+        "summary": "Selecionado para o programa competitivo de formação em Desenvolvimento iOS patrocinado pela Apple.",
+        "highlights": [
+          "Desenvolveu múltiplos aplicativos protótipos para iOS explorando o design inicial de frameworks em Objective-C e padrões de UI mobile"
+        ]
       }
     ],
     "skills": [
       {
-        "name": "Desenvolvimento iOS",
-        "keywords": ["Swift", "SwiftUI", "Objective-C", "tvOS", "CarPlay"]
+        "name": "Arquitetura Mobile & Core",
+        "keywords": ["iOS (Swift, SwiftUI, Objective-C, UIKit)", "Padrões de Arquitetura (MVVM, VIPER, MVC)", "React Native", "Flutter", "tvOS", "Design de Sistemas Mobile", "Otimização de Performance"]
       },
       {
-        "name": "Mobile Multiplataforma",
-        "keywords": ["React Native", "Flutter"]
+        "name": "Liderança & Estratégia",
+        "keywords": ["Líder Técnico", "Mentoria de Equipe", "Colaboração Multifuncional", "Padrões de Code Review", "Experiência do Desenvolvedor (DevEx)", "Agile/Scrum"]
+      },
+      {
+        "name": "Cloud, DevOps & Infraestrutura",
+        "keywords": ["Plataformas de Desenvolvedores (IDP)", "AWS", "Docker", "Terraform", "CI/CD (Fastlane, GitHub Actions)", "Testes Automatizados"]
       },
       {
         "name": "Desenvolvimento Web",
         "keywords": ["Vue.js", "Node.js", "Nest.js"]
-      },
-      {
-        "name": "Cloud & DevOps",
-        "keywords": ["AWS", "Docker", "Terraform"]
-      },
-      {
-        "name": "Metodologias",
-        "keywords": ["Scrum", "Agile", "Continuous Integration", "Continuous Delivery"]
       }
     ],
     "certifications": [

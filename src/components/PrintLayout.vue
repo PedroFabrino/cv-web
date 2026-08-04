@@ -1,203 +1,245 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const props = defineProps({
+  visible: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+const { t } = useI18n()
+
+const formatDate = (dateStr) => {
+  if (!dateStr) return ''
+  if (dateStr.toLowerCase() === 'present' || dateStr.toLowerCase() === 'presente') {
+    return t('ui.present')
+  }
+  const parts = dateStr.split('-')
+  if (parts.length === 2) {
+    const year = parts[0]
+    const monthIndex = parseInt(parts[1], 10) - 1
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    if (monthIndex >= 0 && monthIndex < 12) {
+      return `${months[monthIndex]} ${year}`
+    }
+  }
+  return dateStr
+}
 </script>
 
 <template>
-  <div class="print-layout">
-    <div class="print-sidebar">
-      <!-- Contact Info -->
-      <div class="print-section">
-        <h3>Contact</h3>
-        <p>{{ $t('cv.basics.phone') }}</p>
-        <p>{{ $t('cv.basics.email') }}</p>
-        <p>{{ $t('cv.basics.url') }}</p>
+  <div class="print-layout" :class="{ 'is-visible': visible }">
+    <!-- ATS & LinkedIn compliant Single-Column Header -->
+    <header class="cv-header">
+      <h1 class="candidate-name">{{ $t('cv.basics.name') }}</h1>
+      <div class="candidate-title">{{ $t('cv.basics.label') }}</div>
+      <div class="contact-line">
+        <span>{{ $t('cv.basics.location.city') }}, {{ $t('cv.basics.location.region') }}</span>
+        <span class="sep">•</span>
+        <span>{{ $t('cv.basics.email') }}</span>
+        <span class="sep">•</span>
+        <span>{{ $t('cv.basics.phone') }}</span>
+        <span class="sep">•</span>
+        <a :href="$t('cv.basics.url')">{{ $t('cv.basics.url') }}</a>
       </div>
-      
-      <!-- Skills -->
-      <div class="print-section">
-        <h3>Top Skills</h3>
-        <div v-for="(category, index) in $tm('cv.skills')" :key="index" class="print-skill-cat">
-          <h4>{{ category.name }}</h4>
-          <p>{{ category.keywords.join(', ') }}</p>
-        </div>
-      </div>
+    </header>
 
-      <!-- Certifications -->
-      <div class="print-section">
-        <h3>{{ $t('ui.certifications') }}</h3>
-        <div v-for="(cert, index) in $tm('cv.certifications')" :key="index" class="print-cert">
-          <h4>{{ cert.name }}</h4>
-          <p>{{ cert.issuer }} &bull; {{ cert.date }}</p>
-        </div>
-      </div>
-    </div>
+    <!-- Professional Summary -->
+    <section class="cv-section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">{{ $t('cv.basics.summary') }}</p>
+    </section>
 
-    <div class="print-main">
-      <!-- Header Info -->
-      <header class="print-header">
-        <h1>{{ $t('cv.basics.name') }}</h1>
-        <h2>{{ $t('cv.basics.label') }}</h2>
-        <p>{{ $t('cv.basics.location.city') }}, {{ $t('cv.basics.location.region') }}</p>
-      </header>
-
-      <!-- Summary -->
-      <div class="print-section">
-        <h3>Summary</h3>
-        <p>{{ $t('cv.basics.summary') }}</p>
-      </div>
-
-      <!-- Experience -->
-      <div class="print-section">
-        <h3>Experience</h3>
-        <div v-for="(job, index) in $tm('cv.work')" :key="index" class="print-job">
-          <div class="job-header">
-            <h4>{{ job.position }}</h4>
-            <span>{{ job.company }} | {{ job.startDate }} - {{ job.endDate }}</span>
+    <!-- Work Experience -->
+    <section class="cv-section">
+      <h2 class="section-title">Work Experience</h2>
+      <div v-for="(job, index) in $tm('cv.work')" :key="index" class="job-item">
+        <div class="job-header">
+          <div class="job-role">
+            <strong class="job-position">{{ job.position }}</strong> — <span class="job-company">{{ job.company }}</span>
           </div>
-          <p class="job-summary">{{ job.summary }}</p>
-          <ul>
-            <li v-for="(highlight, hIndex) in job.highlights" :key="hIndex">{{ highlight }}</li>
-          </ul>
+          <div class="job-dates">
+            {{ formatDate(job.startDate) }} – {{ formatDate(job.endDate) }}
+          </div>
+        </div>
+        <p v-if="job.summary" class="job-summary">{{ job.summary }}</p>
+        <ul v-if="job.highlights && job.highlights.length" class="job-highlights">
+          <li v-for="(highlight, hIndex) in job.highlights" :key="hIndex">
+            {{ highlight }}
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="cv-section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-list">
+        <div v-for="(category, index) in $tm('cv.skills')" :key="index" class="skill-group">
+          <strong>{{ category.name }}:</strong> {{ category.keywords.join(', ') }}
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="cv-section" v-if="$tm('cv.certifications') && $tm('cv.certifications').length">
+      <h2 class="section-title">{{ $t('ui.certifications') }}</h2>
+      <div v-for="(cert, index) in $tm('cv.certifications')" :key="index" class="cert-item">
+        <strong>{{ cert.name }}</strong> — <span>{{ cert.issuer }} ({{ cert.date }})</span>
+      </div>
+    </section>
   </div>
 </template>
 
 <style scoped>
-/* Hidden by default on web */
-@media screen {
-  .print-layout {
-    display: none !important;
-  }
+.print-layout {
+  display: none;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+  background: #ffffff;
+  color: #111827;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.print-layout.is-visible {
+  display: block !important;
 }
 
 @media print {
   .print-layout {
     display: block !important;
+    padding: 0;
     width: 100%;
-    background: #fff;
-    color: #333;
-    font-family: var(--font-primary), sans-serif;
+    max-width: 100%;
   }
+}
 
-  .print-sidebar {
-    width: 250px;
-    float: left;
-    background: transparent;
-    color: #333;
-    padding: 2rem;
-    border-right: 2px solid #e2e8f0;
-    box-sizing: border-box;
-  }
+.cv-header {
+  border-bottom: 2px solid #111827;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
 
-  .print-main {
-    margin-left: 250px;
-    padding: 2rem 3rem;
-    box-sizing: border-box;
-  }
-  
-  /* Clearfix for the container */
-  .print-layout::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.candidate-name {
+  font-size: 24pt;
+  font-weight: bold;
+  color: #111827;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 
-  .print-sidebar h3 {
-    color: #0f172a;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    margin-top: 0;
-  }
+.candidate-title {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
 
-  .print-sidebar p {
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
-    word-break: break-all;
-    color: #333;
-  }
+.contact-line {
+  font-size: 9.5pt;
+  color: #374151;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
 
-  .print-skill-cat, .print-cert {
-    margin-bottom: 1rem;
-  }
-  .print-skill-cat h4, .print-cert h4 {
-    font-size: 0.9rem;
-    margin: 0 0 0.2rem 0;
-    color: #3b82f6;
-  }
+.contact-line a {
+  color: #2563eb;
+  text-decoration: none;
+}
 
+.sep {
+  color: #9ca3af;
+}
 
-  .print-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    color: #0f172a;
-  }
+.cv-section {
+  margin-bottom: 1.25rem;
+  page-break-inside: auto;
+}
 
-  .print-header h2 {
-    font-size: 1.2rem;
-    color: #3b82f6;
-    margin: 0.5rem 0;
-  }
+.section-title {
+  font-size: 13pt;
+  font-weight: bold;
+  color: #111827;
+  text-transform: uppercase;
+  border-bottom: 1px solid #d1d5db;
+  padding-bottom: 0.25rem;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.5px;
+}
 
-  .print-header p {
-    color: #64748b;
-    font-size: 0.9rem;
-  }
+.summary-text {
+  font-size: 10pt;
+  color: #1f2937;
+  margin: 0;
+  text-align: justify;
+}
 
-  .print-section {
-    margin-top: 2rem;
-  }
+.job-item {
+  margin-bottom: 1rem;
+  page-break-inside: avoid;
+}
 
-  .print-main h3 {
-    color: #0f172a;
-    font-size: 1.4rem;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-  }
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
 
-  .print-main p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
+.job-position {
+  font-size: 11pt;
+  color: #111827;
+}
 
-  .print-job {
-    margin-bottom: 1.5rem;
-  }
+.job-company {
+  font-size: 10.5pt;
+  color: #374151;
+}
 
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5rem;
-  }
+.job-dates {
+  font-size: 9.5pt;
+  font-weight: bold;
+  color: #4b5563;
+  white-space: nowrap;
+}
 
-  .job-header h4 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #1e293b;
-  }
+.job-summary {
+  font-size: 9.5pt;
+  color: #374151;
+  margin: 0.25rem 0 0.4rem 0;
+}
 
-  .job-header span {
-    font-size: 0.85rem;
-    color: #64748b;
-    font-weight: 600;
-  }
+.job-highlights {
+  margin: 0;
+  padding-left: 1.2rem;
+}
 
-  .job-summary {
-    margin-bottom: 0.5rem;
-  }
+.job-highlights li {
+  font-size: 9.5pt;
+  color: #1f2937;
+  margin-bottom: 0.2rem;
+}
 
-  ul {
-    margin: 0;
-    padding-left: 1.2rem;
-  }
+.skills-list {
+  font-size: 9.5pt;
+  color: #1f2937;
+}
 
-  li {
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-    line-height: 1.4;
-  }
+.skill-group {
+  margin-bottom: 0.35rem;
+}
+
+.cert-item {
+  font-size: 9.5pt;
+  color: #1f2937;
+  margin-bottom: 0.35rem;
 }
 </style>
